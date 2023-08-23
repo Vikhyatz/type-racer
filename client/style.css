@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'VT323', monospace;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    flex-direction: row;
+    gap: 50px;
+    background-color: wheat;
+}
+
+
+/* joining */
+#joining {
+    transition: 1s;
+    text-align: center;
+}
+
+#joining input {
+    width: 200px;
+    height: 60px;
+    background-color: black;
+    color: white;
+    border: 0;
+    border-radius: 8px;
+    outline: 0;
+    transition: 0.3s;
+    font-size: 30px;
+    text-align: center;
+}
+
+#joining button {
+    width: 200px;
+    height: 60px;
+    background-color: black;
+    color: wheat;
+    border: 0;
+    border-radius: 8px;
+    outline: 0;
+    transition: 0.3s;
+    font-size: 30px;
+    margin: 10px;
+}
+
+#joining button:hover {
+    color: black;
+    background-color: wheat;
+    border: 1px solid black;
+}
+
+
+#createGame,
+#joinGame {
+    display: none;
+}
+
+.leaveBtn {
+    width: 200px;
+    height: 60px;
+    background-color: black;
+    color: wheat;
+    border: 0;
+    border-radius: 8px;
+    outline: 0;
+    transition: 0.3s;
+    font-size: 30px;
+    margin: 10px;
+}
+
+/* joining */
+
+
+
+/* validation */
+
+#validation {
+    width: 90%;
+    height: 60px;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: red;
+    position: absolute;
+    top: -80px;
+    left: calc((100% - 90%)/2);
+    clip-path: polygon(0px calc(100% - 15px),
+            3px calc(100% - 15px),
+            3px calc(100% - 9px),
+            6px calc(100% - 9px),
+            6px calc(100% - 6px),
+            9px calc(100% - 6px),
+            9px calc(100% - 3px),
+            15px calc(100% - 3px),
+            15px 100%,
+            calc(100% - 15px) 100%,
+            calc(100% - 15px) calc(100% - 3px),
+            calc(100% - 9px) calc(100% - 3px),
+            calc(100% - 9px) calc(100% - 6px),
+            calc(100% - 6px) calc(100% - 6px),
+            calc(100% - 6px) calc(100% - 9px),
+            calc(100% - 3px) calc(100% - 9px),
+            calc(100% - 3px) calc(100% - 15px),
+            100% calc(100% - 15px),
+            100% 15px,
+            calc(100% - 3px) 15px,
+            calc(100% - 3px) 9px,
+            calc(100% - 6px) 9px,
+            calc(100% - 6px) 6px,
+            calc(100% - 9px) 6px,
+            calc(100% - 9px) 3px,
+            calc(100% - 15px) 3px,
+            calc(100% - 15px) 0px,
+            15px 0px,
+            15px 3px,
+            9px 3px,
+            9px 6px,
+            6px 6px,
+            6px 9px,
+            3px 9px,
+            3px 15px,
+            0px 15px);
+    transition: 0.3s;
+}
+
+/* validation */
+
+
+
+/* main game */
+.two-sides {
+    width: 500px;
+    height: 90vh;
+    background-color: transparent;
+}
+
+#displayQuoteMe,
+#displayQuoteOpponent {
+    width: 430px;
+    height: 280px;
+    padding: 10px 10px;
+    overflow: auto;
+    background-color: black;
+    border: 2px solid black;
+    font-size: 25px;
+    pointer-events: none;
+    user-select: none;
+    color: wheat;
+}
+
+#left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+}
+
+#right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 100px;
+}
+
+#inpContent {
+    width: 430px;
+    height: 180px;
+    padding: 10px 10px;
+    overflow: auto;
+    background-color: wheat;
+    border: 2px solid black;
+    resize: none;
+    font-size: 25px;
+    pointer-events: none;
+}
+
+.correct {
+    color: rgb(0, 214, 0);
+}
+
+.incorrect {
+    color: red;
+}
+
+#displayQuoteOpponent {
+    text-align: left;
+}
+
+
+/* main game */
+
+#mainGame {
+    display: none;
+    transition: 1s;
+}
+
+/* media queries */
+@media screen and (max-width: 770px) {
+
+    #mainGame {
+        flex-direction: column-reverse;
+        gap: 20px;
+    }
+
+    #displayQuoteMe,
+    #displayQuoteOpponent {
+        width: 90vw;
+        height: fit-content;
+        font-size: 20px;
+    }
+
+    #inpContent {
+        width: 90vw;
+        height: 100px;
+        font-size: 20px;
+        overflow: scroll;
+    }
+
+    .two-sides {
+        height: fit-content;
+        width: 90vw;
+    }
+
+    #right {
+        gap: 10px;
+    }
+}

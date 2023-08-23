@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <link rel="stylesheet" href="style.css">
+    <title>Type Racer</title>
+</head>
+
+<body>
+
+    <div id="joining">
+        <div id="validation">
+            Please provide a name for the room :)
+        </div>
+
+        <button id="createBtn">CREATE GAME</button>
+        <div id="createGame">
+            <input id="createInp" type="text" class="input" autocomplete="off" placeholder="create room">
+            <button id="createAndStartGame">create</button>
+        </div>
+        <button id="joinBtn">JOIN GAME</button>
+        <div id="joinGame">
+            <input id="joinInp" type="text" class="input" autocomplete="off" placeholder="join room">
+            <button id="joinAndStartGame">join</button>
+        </div>
+    </div>
+
+
+    <div id="mainGame">
+
+        <div class="two-sides" id="left">
+            <div id="displayQuoteMe">
+                quote
+            </div>
+            <textarea type="text" id="inpContent" placeholder="Text Area"></textarea>
+        </div>
+
+        <div class="two-sides" id="right">
+
+            <div id="HeadContainer">
+                <h1>Type Racer</h1>
+                <h1 id="roomName"></h1>
+                <h1 id="countdown-stopwatch">00</h1>
+            </div>
+
+            <div id="oppponentsContainer">
+                <h1>"Opponent's" Input</h1>
+                <div id="displayQuoteOpponent">Waiting for opponents input....</div>
+            </div>
+
+        </div>
+
+        <div id="results"></div>
+
+    </div>
+
+
+</body>
+<script src="/socket.io/socket.io.js"></script>
+<script src="script.js"></script>
+
+</html>
